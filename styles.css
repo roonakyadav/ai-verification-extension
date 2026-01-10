@@ -87,6 +87,13 @@
   font-size: 13px;
 }
 
+.ai-verification-no-claims {
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* Ensure the verification panel fits well within ChatGPT's layout */
 .ai-verification-container p {
   margin: 0;
@@ -98,6 +105,52 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.ai-verification-claim-item {
+  margin-top: 8px;
+  padding: 8px;
+  border-left: 2px solid #555;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ai-verification-claim-text {
+  font-style: italic;
+  margin-bottom: 4px;
+  color: #ccc;
+}
+
+.ai-verification-claim-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.ai-verification-claim-type {
+  color: #aaa;
+}
+
+.ai-verification-claim-status {
+  color: #aaa;
+}
+
+.ai-verification-claim-status.status-issue {
+  color: #ff6b6b;
+}
+
+.ai-verification-claim-status.status-verified {
+  color: #4caf50;
+}
+
+.ai-verification-claim-status.status-ignored {
+  color: #888;
+}
+
+.ai-verification-claims-list h4 {
+  margin: 10px 0 6px 0;
+  color: #e6e6e6;
+  font-size: 14px;
 }
 
 /* Adjust for ChatGPT's dark theme */
