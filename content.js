@@ -159,7 +159,7 @@
     }
     
     // Log when verification finalizes
-    console.log(`[AI-Verification] Verification finalized for answer ${answerId}. Claims: ${(analysisResult && analysisResult.claims) ? analysisResult.claims.length : 0}, Issues: ${issues}`);
+    console.log(`[AI-Verification] Verification finished ${answerId}. Claims: ${(analysisResult && analysisResult.claims) ? analysisResult.claims.length : 0}, Issues: ${issues}`);
   }
   
   // Function to classify claims using heuristics
@@ -506,6 +506,7 @@
             hasStartedVerification: true,
             hasCompletedVerification: false
           });
+          console.log(`[AI-Verification] DOM stable, starting verification ${answerId}`);
           startVerification(verificationContainer, answerId);
         }
       } else {
@@ -517,13 +518,13 @@
         
         // Content changed, update and check again
         previousTextContent = currentTextContent;
-        const timeoutId = setTimeout(checkContentChange, 500); // Wait 500ms before checking again
+        const timeoutId = setTimeout(checkContentChange, 1000); // Wait 1000ms before checking again
         contentObservationTimeouts.set(answerElement, timeoutId);
       }
     };
     
     // Start the content observation
-    const timeoutId = setTimeout(checkContentChange, 500);
+    const timeoutId = setTimeout(checkContentChange, 1000);
     contentObservationTimeouts.set(answerElement, timeoutId);
   }
 
@@ -563,6 +564,7 @@
     if (answerContainer) {
       // Only process if not already processed
       if (!processedAnswers.has(answerContainer)) {
+        console.log(`[AI-Verification] New assistant message detected ${getOrCreateAnswerId(answerContainer)}`);
         // Check if the message is already finalized before waiting for stability
         if (isCompletedChatGPTAnswer(answerContainer)) {
           // Check if a verification panel already exists to ensure idempotency
