@@ -1,0 +1,120 @@
+/* Styles for ChatGPT AI Verification Panel */
+
+.ai-verification-container {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background-color: #2d2d2d; /* Dark gray background matching ChatGPT dark mode */
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #e6e6e6;
+  position: relative;
+}
+
+.ai-verification-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-verification-loading {
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-verification-results {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ai-verification-issue {
+  color: #ff6b6b; /* Red color for warnings */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-verification-verified {
+  color: #4caf50; /* Green color for verified items */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-verification-details-btn {
+  background-color: #3a3a3a;
+  color: #e6e6e6;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+.ai-verification-details-btn:hover {
+  background-color: #4a4a4a;
+}
+
+.ai-verification-details-btn:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 1px;
+}
+
+/* Additional styles for the details section */
+.ai-verification-details-section {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #3a3a3a;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+
+.ai-verification-detail-item {
+  margin-bottom: 8px;
+  color: #e6e6e6;
+}
+
+.ai-verification-note {
+  font-style: italic;
+  color: #cccccc;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* Ensure the verification panel fits well within ChatGPT's layout */
+.ai-verification-container p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the details section fits well within the container */
+.ai-verification-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Adjust for ChatGPT's dark theme */
+@media (prefers-color-scheme: dark) {
+  .ai-verification-container {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #e6e6e6;
+  }
+  
+  .ai-verification-details-btn {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #e6e6e6;
+  }
+  
+  .ai-verification-details-btn:hover {
+    background-color: #4a4a4a;
+  }
+}
